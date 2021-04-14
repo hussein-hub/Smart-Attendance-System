@@ -74,7 +74,7 @@ def recognizeStudent():
                     tName = name
 
                 if tName == name and flag:
-                    # print(name)
+                    print(name)
                     markAttendance.fetchData(name)
                     flag = False
 

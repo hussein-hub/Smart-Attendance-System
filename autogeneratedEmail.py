@@ -51,9 +51,9 @@ def deleteCSV(fileName):
         print("file not found")
 
 
-def send_email(subject, msg, file):
+def send_email(subject, msg, file, emailto):
     emailfrom = "ultimate6364@gmail.com"
-    emailto = ["n.mandliya@somaiya.edu"]
+    # emailto = ["n.mandliya@somaiya.edu"]
     fileToSend = f"AttendanceCSV/{file}.csv"
 
     msg = MIMEMultipart()

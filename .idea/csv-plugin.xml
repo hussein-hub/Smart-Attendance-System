@@ -31,6 +31,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\AttendanceCSV\2_RDBMS.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\AttendanceCSV\2_rdbms.csv">
           <value>
             <Attribute>

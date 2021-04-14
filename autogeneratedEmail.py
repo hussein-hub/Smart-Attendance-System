@@ -18,7 +18,7 @@ import mysql.connector
 database = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Hussein7860@",
+    password="Nayan@123",
     database="attendance"
 )
 
@@ -52,7 +52,7 @@ def deleteCSV(fileName):
 
 
 def send_email(subject, msg, file, emailto):
-    emailfrom = "ultimate6364@gmail.com"
+    emailfrom = "n.mandliya@somaiya.edu"
     # emailto = ["n.mandliya@somaiya.edu"]
     fileToSend = f"AttendanceCSV/{file}.csv"
 

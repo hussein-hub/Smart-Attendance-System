@@ -4,7 +4,7 @@ import preproccess as process
 database = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Hussein7860@",
+    password="Nayan@123",
     database="attendance"
 )
 

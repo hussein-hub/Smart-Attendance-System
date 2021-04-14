@@ -3,14 +3,14 @@ import mysql.connector
 database = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Nayan@123",
+    password="Hussein7860@",
     database="attendance"
 
 )
 temp = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Nayan@123",
+    password="Hussein7860@",
     database="attendance"
 )
 

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../../OSTPL/LAB/CODE/.idea/CODE.iml" filepath="$PROJECT_DIR$/../../OSTPL/LAB/CODE/.idea/CODE.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../OSTPL/LAB/CODE/Practice/.idea/Practice.iml" filepath="$PROJECT_DIR$/../../OSTPL/LAB/CODE/Practice/.idea/Practice.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../../Hussein/python/.idea/python.iml" filepath="$PROJECT_DIR$/../../../../Hussein/python/.idea/python.iml" />
       <module fileurl="file://$PROJECT_DIR$/../smartAttendanceSystem/.idea/pythonProject.iml" filepath="$PROJECT_DIR$/../smartAttendanceSystem/.idea/pythonProject.iml" />

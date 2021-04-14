@@ -5,9 +5,10 @@ import time
 import cv2
 import csv
 from collections import Iterable
+import markAttendance
 # import inputFromUser
 
-
+'''
 def recognizeStudent():
     embeddingModel = "nn4.small2.v1.t7"
 
@@ -76,9 +77,9 @@ def recognizeStudent():
 
     cam.release()
     cv2.destroyAllWindows()
-
-
 '''
+
+
 def flatten(lis):
     for item in lis:
         if isinstance(item, Iterable) and not isinstance(item, str):
@@ -111,6 +112,8 @@ def recognizeStudent():
     print("[INFO] starting video stream...")
     cam = cv2.VideoCapture(0)
     time.sleep(2.0)
+    tName = ''
+    flag = True
 
     while True:
         _, frame = cam.read()
@@ -146,7 +149,19 @@ def recognizeStudent():
                 j = np.argmax(preds)
                 proba = preds[j]
                 name = le.classes_[j]
-                with open(f'AttendanceCSV/2_rdbms.csv', 'r') as csvFile:
+
+                if flag:
+                    tName = name
+
+                if tName != name:
+                    flag = True
+                    tName = name
+
+                if tName == name and flag:
+                    # print(name)
+                    markAttendance.fetchData(name)
+                    flag = False
+                '''with open(f'AttendanceCSV/2_rdbms.csv', 'r') as csvFile:
                     reader = csv.reader(csvFile)
                     for row in reader:
                         box = np.append(box, row)
@@ -162,7 +177,7 @@ def recognizeStudent():
                         Index = singleList.index(name)
                         name = singleList[Index]
                         Roll_Number = singleList[Index + 1]
-                        print(Roll_Number)
+                        print(Roll_Number)'''
 
                 text = "{} : {} : {:.2f}%".format(name, Roll_Number, proba * 100)
                 y = startY - 10 if startY - 10 > 10 else startY + 10
@@ -177,4 +192,3 @@ def recognizeStudent():
 
     cam.release()
     cv2.destroyAllWindows()
-'''

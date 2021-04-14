@@ -8,21 +8,21 @@ import config
 import smtplib
 
 
-def send_email(subject, msg):
-    try:
-        server = smtplib.SMTP('smtp.gmail.com:587')
-        server.ehlo()
-        server.starttls()
-        server.login(config.EMAIL_ADDRESS, config.PASSWORD)
-        message = 'Subject: {}\n\n{}'.format(subject, msg)
-        server.sendmail(config.EMAIL_ADDRESS, 'n.mandliya@somaiya.edu', message)
-        server.quit()
-        print("Success: Email sent!")
-    except:
-        print("Email failed to send.")
+def send_email(subject, msg, file):
+    server = smtplib.SMTP('smtp.gmail.com:587')
+    server.ehlo()
+    server.starttls()
+    server.login(config.EMAIL_ADDRESS, config.PASSWORD)
+    message = 'Subject: {}\n\n{}'.format(subject, msg)
+    server.sendmail(config.EMAIL_ADDRESS, 'n.mandliya@somaiya.edu', message)
+    server.quit()
+    print("Success: Email sent!")
+
+
 
 
 subject = "Test subject"
 msg = "This is an auto-generated email sent using python"
+file = 'AttendanceCSV/1_RDBMS.csv'
+send_email(subject, msg, file)
 
-send_email(subject, msg)

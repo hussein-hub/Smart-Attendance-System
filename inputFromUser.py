@@ -85,7 +85,7 @@ def verifyTeacher(controller, userName, password):
                     tk.messagebox.showwarning('Incorrect Password', 'Wrong Password please try again')
                     break
             else:
-                tk.messagebox.showwarning('Lecture Scheduled', 'Lecture already scheduled')
+                tk.messagebox.showwarning('Lecture Scheduled', f'{currentLecture[1]} Lecture already scheduled')
                 userName.delete(0, 'end')
                 password.delete(0, 'end')
                 return controller.show_frame(StartPage)

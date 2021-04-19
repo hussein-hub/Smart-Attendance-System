@@ -22,23 +22,7 @@ database = mysql.connector.connect(
     database="attendance"
 )
 
-'''
-def send_email(subject, msg, file):
-    msg = MIMEMultipart()
-    # Add body to email
-    # open and read the CSV file in binary
-    with open(f'AttendanceCSV/{file}.csv', 'r') as f:
-        # Attach the file with filename to the email
-        msg.attach(MIMEApplication(f.read(), Name=file))
-    server = smtplib.SMTP('smtp.gmail.com:587')
-    server.ehlo()
-    server.starttls()
-    server.login(config.EMAIL_ADDRESS, config.PASSWORD)
-    message = 'Subject: {}\n\n{}'.format(subject, msg)
-    server.sendmail(config.EMAIL_ADDRESS, 'n.mandliya@somaiya.edu', message)
-    server.quit()
-    print("Success: Email sent!")
-'''
+
 
 def deleteCSV(fileName):
     cursor = database.cursor()
@@ -59,8 +43,8 @@ def send_email(subject, msg, file, emailto):
     msg = MIMEMultipart()
     msg["From"] = emailfrom
     msg["To"] = ",".join(emailto)
-    msg["Subject"] = "Attendance"
-    msg.preamble = "YOUR EMAIL SUBJECT"
+    msg["Subject"] = f"Attendance for {file[0]} year, subject {file[2:]}"
+    msg.preamble = f"Attendance for {file[0]} year, subject {file[2:]}"
 
     fp = open(fileToSend, "rb")
     attachment = MIMEBase(maintype, subtype)

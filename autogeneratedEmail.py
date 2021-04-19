@@ -59,7 +59,7 @@ def send_email(subject, msg, file, emailto):
     msg = MIMEMultipart()
     msg["From"] = emailfrom
     msg["To"] = ",".join(emailto)
-    msg["Subject"] = "YOUR EMAIL SUBJECT"
+    msg["Subject"] = "Attendance"
     msg.preamble = "YOUR EMAIL SUBJECT"
 
     fp = open(fileToSend, "rb")

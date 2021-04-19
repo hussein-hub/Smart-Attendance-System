@@ -159,7 +159,7 @@ class StartPage(tk.Frame):
         label.grid(row=0, column=2, padx=35, pady=10, rowspan=2)
         login = tk.Button(self, text='Login', command=lambda: controller.show_frame(loginPage), bg='#4e74fc', font=MEDIUMFONT)
         register = tk.Button(self, text='Register', command=lambda: controller.show_frame(registerPage), bg='#4e74fc', font=MEDIUMFONT)
-        markAttendance = tk.Button(self, text='Mark Attendance', command=lambda: recognize.recognizeStudent(),
+        markAttendance = tk.Button(self, text='Mark Attendance', command=lambda: recognize.recognizeStudent(currentTeacher),
                                    bg='#4e74fc', font=MEDIUMFONT)
 
         login.grid(row=2, column=2, padx=10, pady=10)
